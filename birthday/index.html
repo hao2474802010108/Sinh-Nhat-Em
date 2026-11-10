@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fff2f4">
+  <meta name="description" content="Một chút phép màu, hai mươi khoảnh khắc và tất cả những điều dịu dàng dành riêng cho em. Chúc mừng sinh nhật, công chúa của anh.">
+  <title>Một ngày dành riêng cho em ♡</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" href="assets/fonts/lora-regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/nunito-regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fairytale.css">
+</head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6Z"/></symbol>
+    <symbol id="i-crown" viewBox="0 0 32 28"><path d="m5 21-3-14 9 6 5-11 5 11 9-6-3 14Z"/><path d="M6 26h20"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 17V5l11-2v12M9 8l11-2"/><ellipse cx="6" cy="18" rx="3" ry="2.5"/><ellipse cx="17" cy="16" rx="3" ry="2.5"/></symbol>
+    <symbol id="i-bow" viewBox="0 0 100 62"><path d="M47 27C33 8 7-3 5 14c-3 22 21 27 42 15ZM53 27C67 8 93-3 95 14c3 22-21 27-42 15Z"/><path d="M45 31 25 59l17-5 7-18m6-5 20 28-17-5-7-18"/><ellipse cx="50" cy="29" rx="7" ry="8"/></symbol>
+    <symbol id="i-flower" viewBox="0 0 60 60"><path d="M30 22C13-5 4 17 21 28-9 27 9 49 25 36c-8 28 17 25 11 3 20 15 32-8 5-10C65 12 39 1 30 22Z"/><circle cx="30" cy="30" r="6"/></symbol>
+  </defs></svg>
+  <a class="skip-link" href="#wishes">Đến lời chúc sinh nhật</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+  <canvas id="fairyDustCanvas" class="fairy-dust-canvas" aria-hidden="true"></canvas>
+  <div id="fairyIntro" class="fairy-intro" aria-hidden="true" hidden>
+    <div id="fairyTraveler" class="fairy-traveler"><img src="assets/fairy.svg" width="180" height="210" alt=""></div>
+    <span class="fairy-intro-copy">Một chút phép màu, dành riêng cho em…</span>
+  </div>
+  <div id="fairyGuide" class="fairy-guide" aria-hidden="true" hidden><img src="assets/fairy.svg" width="180" height="210" alt=""></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Về đầu trang"><svg class="icon crown"><use href="#i-crown"/></svg><span>a little <i>fairytale</i><small>MỘT NGÀY DÀNH RIÊNG CHO EM</small></span></a>
+    <nav aria-label="Các phần của trang"><a href="#wishes">Lời chúc</a><a href="#memories">Khoảnh khắc</a><a href="#make-a-wish">Điều ước</a><a href="#love-letter">Thư gửi em</a></nav>
+    <button class="editor-trigger" data-open-editor aria-label="Cá nhân hóa ảnh và lời chúc"><svg class="icon"><use href="#i-star"/></svg><span>Cá nhân hóa</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-scene" aria-hidden="true"></div>
+      <div class="magic-dust" aria-hidden="true"><span>✧</span><span>✦</span><span>✧</span><span>✦</span><span>♡</span><span>✧</span><span>✦</span><span>♡</span><span>✧</span></div>
+      <div class="butterfly butterfly-one" aria-hidden="true"><i></i><i></i></div><div class="butterfly butterfly-two" aria-hidden="true"><i></i><i></i></div>
+      <div class="hero-inner container">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> HAPPY BIRTHDAY, MY PRINCESS <span>✧</span></div>
+          <h1 id="hero-title">Thế giới này<br>dịu dàng hơn<br><em>vì có em.</em><svg class="title-star"><use href="#i-star"/></svg></h1>
+          <p class="hero-greeting">Chúc mừng sinh nhật,<br><strong data-nickname>Công chúa của anh</strong> <span class="pink-heart">♡</span></p>
+          <p class="hero-description">Một chút phép màu, một trời thương nhớ,<br>và tất cả những điều ngọt ngào dành riêng cho em.</p>
+          <button class="button primary" id="openStory"><svg class="icon"><use href="#i-heart"/></svg>Mở món quà của em<svg class="icon small"><use href="#i-arrow"/></svg></button>
+          <div class="hero-footnote"><span class="small-sparkle">✦</span> Hôm nay, em là nhân vật chính.</div>
+          <button class="fairy-replay" id="replayMagic" type="button"><svg class="icon"><use href="#i-star"/></svg>Thêm chút phép màu</button>
+        </div>
+        <div class="hero-art">
+          <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+          <span class="art-star star-a" aria-hidden="true">✧</span><span class="art-star star-b" aria-hidden="true">✦</span>
+          <div class="portrait-frame">
+            <div class="portrait-inner"><img id="heroPhoto" src="assets/photo-01.svg" alt="Một khung hình dành cho công chúa của anh" width="600" height="750" fetchpriority="high"></div>
+            <svg class="frame-crown" aria-hidden="true"><use href="#i-crown"/></svg>
+            <svg class="frame-bow" aria-hidden="true"><use href="#i-bow"/></svg>
+          </div>
+          <div class="photo-note"><span>the birthday girl</span><svg class="icon"><use href="#i-heart"/></svg></div>
+          <div class="floating-badge"><span>100%</span><small>đáng yêu</small><span class="badge-star">✧</span></div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#wishes"><span>VÀ CÂU CHUYỆN BẮT ĐẦU…</span><span class="scroll-line"></span></a>
+    </section>
+
+    <div class="love-ribbon" aria-hidden="true"><div><span>you are a little magic</span> ✧ <span>hôm nay và mọi ngày</span> ♡ <span>happy birthday, my love</span> ✧ <span>thương em thật nhiều</span> ♡ <span>you are a little magic</span> ✧ <span>hôm nay và mọi ngày</span> ♡ <span>happy birthday, my love</span> ✧ <span>thương em thật nhiều</span> ♡ </div></div>
+
+    <section class="wishes-section section-pad" id="wishes" aria-labelledby="wishes-title">
+      <div class="container wishes-layout">
+        <div class="wishes-art reveal">
+          <div class="decorative-flower flower-a" aria-hidden="true"><svg><use href="#i-flower"/></svg></div>
+          <figure class="wishes-photo"><img src="assets/photo-02.svg" data-photo-index="1" alt="Một khoảnh khắc dịu dàng của em" loading="lazy" width="600" height="750"><figcaption>my favorite person, always.</figcaption></figure>
+          <figure class="little-photo"><img src="assets/photo-03.svg" data-photo-index="2" alt="Một khung hình đáng yêu khác của em" loading="lazy" width="600" height="750"><figcaption>with love ♡</figcaption></figure>
+          <span class="handwritten art-caption">một người thật đặc biệt!</span>
+          <span class="wishes-star" aria-hidden="true">✧</span>
+        </div>
+        <div class="wishes-copy reveal">
+          <p class="eyebrow">CHƯƠNG 01 <span class="chapter-line"></span> GỬI NGƯỜI ANH THƯƠNG</p>
+          <h2 id="wishes-title">Thêm một tuổi mới,<br>thêm <em>ngàn điều xinh.</em></h2>
+          <div class="wish-message" id="wishMessage"><p>Chúc em một tuổi mới thật nhiều niềm vui, đủ bình yên để thấy lòng nhẹ tênh và đủ can đảm để theo đuổi những điều em yêu.</p><p>Mong nụ cười luôn ở trên môi em, những điều tốt đẹp luôn tìm đến em, và mỗi ngày đều có một lý do nhỏ để em thấy mình được yêu thương.</p><p>Cảm ơn em vì đã có mặt trên thế giới này. Hôm nay, hãy cứ làm công chúa thật vui nhé. Những điều dịu dàng nhất, anh dành cho em.</p></div>
+          <div class="wish-signature"><span>Thương em, hôm nay và mọi ngày.</span><svg class="icon"><use href="#i-heart"/></svg></div>
+        </div>
+      </div>
+      <div class="wish-tokens container reveal"><span><svg class="icon"><use href="#i-flower"/></svg>Một lòng bình yên</span><b>✧</b><span><svg class="icon"><use href="#i-star"/></svg>Một trời mơ ước</span><b>✧</b><span><svg class="icon"><use href="#i-heart"/></svg>Một người luôn thương</span></div>
+    </section>
+
+    <section class="memories-section section-pad" id="memories" aria-labelledby="memories-title">
+      <div class="container">
+        <div class="section-heading reveal"><p class="eyebrow">CHƯƠNG 02 <span class="chapter-line"></span> LITTLE MOMENTS, BIG LOVE</p><h2 id="memories-title">20 khoảnh khắc.<br><em>Một người duy nhất.</em></h2><p>Mỗi bức hình, một lý do để anh mỉm cười.</p><svg class="heading-bow" aria-hidden="true"><use href="#i-bow"/></svg></div>
+        <div id="memoryGrid" class="memory-grid" aria-label="Album 20 hình ảnh"></div>
+        <div class="album-bottom"><span class="album-line"></span><svg class="icon"><use href="#i-heart"/></svg><span>Và còn thật nhiều khoảnh khắc ở phía trước.</span><span class="album-line"></span></div>
+      </div>
+    </section>
+
+    <section class="wish-section section-pad" id="make-a-wish" aria-labelledby="cake-title">
+      <div class="container wish-scene reveal">
+        <div class="wish-moon" aria-hidden="true">☾</div><span class="cake-star cs-one" aria-hidden="true">✧</span><span class="cake-star cs-two" aria-hidden="true">✦</span><span class="cake-star cs-three" aria-hidden="true">✧</span>
+        <p class="eyebrow">CHƯƠNG 03 <span class="chapter-line"></span> MỘT CHÚT PHÉP MÀU</p>
+        <h2 id="cake-title">Nhắm mắt lại,<br><em>ước một điều đi em.</em></h2>
+        <p>Giữ một điều ước nhỏ trong tim.<br>Rồi chạm nhẹ để thổi nến nhé.</p>
+        <div class="cake" role="img" aria-label="Chiếc bánh sinh nhật hồng có ba ngọn nến">
+          <div class="candle candle-one"><i class="flame"></i></div><div class="candle candle-two"><i class="flame"></i></div><div class="candle candle-three"><i class="flame"></i></div>
+          <div class="cake-top"><div class="icing-drip d1"></div><div class="icing-drip d2"></div><div class="icing-drip d3"></div><div class="icing-drip d4"></div></div>
+          <div class="cake-body"><span>♡</span><span>♡</span><span>♡</span></div><div class="cake-base"></div><div class="cake-plate"></div><div class="cake-shadow"></div>
+        </div>
+        <button class="button primary" id="wishButton"><svg class="icon"><use href="#i-star"/></svg>Em ước xong rồi!</button>
+        <p id="wishStatus" class="wish-status" aria-live="polite">Mong mọi điều em ước đều trở thành sự thật. ♡</p>
+      </div>
+    </section>
+
+    <section class="letter-section section-pad" id="love-letter" aria-labelledby="letter-title">
+      <div class="container letter-layout">
+        <div class="letter-copy reveal"><p class="eyebrow">CHƯƠNG CUỐI <span class="chapter-line"></span> FROM MY HEART TO YOURS</p><h2 id="letter-title">Có một lời thương<br><em>đang đợi em mở.</em></h2><p>Một lá thư nhỏ, dành cho một người<br>chiếm một chỗ thật lớn trong tim anh.</p><button class="button primary" id="openLetter">Mở thư gửi em<svg class="icon small"><use href="#i-arrow"/></svg></button></div>
+        <button class="envelope-wrap reveal" id="envelopeButton" aria-label="Mở lá thư tình" onclick="document.getElementById('openLetter').click()"><span class="envelope-letter"><span>Gửi em,</span><i>người anh thương nhất.</i><svg class="icon"><use href="#i-heart"/></svg></span><span class="envelope-back"></span><span class="envelope-front"></span><span class="envelope-flap"></span><span class="wax-seal">♡</span><span class="envelope-caption handwritten">just for you</span><span class="envelope-star" aria-hidden="true">✧</span></button>
+      </div>
+    </section>
+    <footer><svg class="footer-crown"><use href="#i-crown"/></svg><p>Hạnh phúc nhé, <em data-nickname>công chúa của anh.</em></p><span>MADE WITH ALL MY LOVE <b>♡</b> JUST FOR YOU</span><small data-birthday></small><a href="#home" class="back-top">Về đầu câu chuyện ↑</a></footer>
+  </main>
+  <button class="music-toggle" id="musicToggle" aria-pressed="false" aria-label="Bật hoặc tắt nhạc"><svg class="icon"><use href="#i-music"/></svg><span class="music-label">Bật chút nhạc</span><span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span></button>
+
+  <dialog id="photoDialog" class="photo-dialog" aria-label="Xem ảnh kỷ niệm"><button class="dialog-close" data-close-dialog aria-label="Đóng ảnh">×</button><button id="prevPhoto" class="photo-prev" aria-label="Ảnh trước">‹</button><figure><img id="lightboxImage" alt=""><figcaption id="lightboxCaption"></figcaption><span id="photoCounter"></span></figure><button id="nextPhoto" class="photo-next" aria-label="Ảnh tiếp theo">›</button></dialog>
+  <dialog id="letterDialog" class="letter-dialog" aria-labelledby="letter-dialog-title"><button class="dialog-close" data-close-dialog aria-label="Đóng lá thư">×</button><svg class="letter-crown"><use href="#i-crown"/></svg><p class="eyebrow">MỘT LÁ THƯ DÀNH RIÊNG CHO EM</p><h2 id="letter-dialog-title">Gửi <em data-nickname>công chúa của anh,</em></h2><div id="letterBody"></div><div class="letter-sign"><span>Thương em thật nhiều,</span><strong id="letterSender">Người thương của em</strong><svg class="icon"><use href="#i-heart"/></svg></div></dialog>
+  <dialog id="editDialog" class="edit-dialog" aria-labelledby="edit-title"><button class="dialog-close" data-close-dialog aria-label="Đóng phần cá nhân hóa">×</button><p class="eyebrow">THÊM CHÚT RIÊNG CỦA HAI BẠN</p><h2 id="edit-title">Món quà <em>của bạn.</em></h2><p class="edit-intro">Thêm ảnh và lời thương, rồi tải trang hoàn chỉnh để gửi cho cô ấy. Ảnh bạn chọn được lưu trên thiết bị này.</p><div class="editor-fields"><label>Tên gọi yêu thương<input id="editNickname" maxlength="70" placeholder="Công chúa của anh"></label><label>Ngày sinh nhật<input id="editBirthday" type="date"></label><label>Người gửi<input id="editSender" maxlength="70" placeholder="Người thương của em"></label><label class="full">Lời chúc & lá thư<textarea id="editMessage" rows="7" placeholder="Mỗi đoạn cách nhau bằng một dòng trống..."></textarea></label></div><div class="upload-heading"><div><h3>20 khung hình của em</h3><p>Chọn nhiều ảnh cùng lúc hoặc chạm từng ô để thay.</p></div><label class="button secondary upload-label">Chọn bộ ảnh<input id="photoUpload" type="file" accept="image/*" multiple></label></div><div id="uploadStatus" aria-live="polite"></div><div id="editPhotoGrid" class="edit-photo-grid"></div><div class="edit-actions"><button class="button primary" id="saveSettings">Lưu thay đổi ♡</button><button class="button secondary" id="downloadPage">Tải trang để gửi tặng ↓</button></div><p class="editor-note">Bản tải về giữ lại ảnh và lời chúc của bạn trong một tệp HTML. Bạn có thể mở bằng trình duyệt trên máy tính.</p><button id="resetSettings" class="reset-button">Về bản minh họa ban đầu</button></dialog>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script src="fairytale.js"></script>
+</body>
+</html>

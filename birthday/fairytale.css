@@ -1,0 +1,55 @@
+/* Full Vietnamese glyph coverage, served with the website rather than a CDN. */
+@font-face{font-family:'Birthday Lora';src:url('assets/fonts/lora-regular.ttf') format('truetype');font-style:normal;font-weight:400 700;font-display:swap}
+@font-face{font-family:'Birthday Lora';src:url('assets/fonts/lora-italic.ttf') format('truetype');font-style:italic;font-weight:400 700;font-display:swap}
+@font-face{font-family:'Birthday Nunito';src:url('assets/fonts/nunito-regular.ttf') format('truetype');font-style:normal;font-weight:400 800;font-display:swap}
+:root{--serif:'Birthday Lora',Georgia,serif;--sans:'Birthday Nunito','Segoe UI',sans-serif;--spell-gold:#d5b77d}
+body{font-family:var(--sans);font-weight:400;text-rendering:optimizeLegibility}
+h1,h2,.handwritten,.wish-signature,.wish-tokens>span,.memory-caption,.album-bottom,.wish-status,.letter-sign,.love-ribbon span{font-synthesis:none}
+h1,h2{line-height:1.3;letter-spacing:-.035em;overflow:visible}
+.hero h1{font-size:clamp(53px,5.1vw,76px);line-height:1.23;letter-spacing:-.045em}
+.hero h1 em{margin-top:0}.hero-greeting strong{font-weight:600}
+.wishes-copy h2,.section-heading h2,.wish-scene h2,.letter-copy h2{line-height:1.34;letter-spacing:-.035em}
+.wish-message p{font-size:14px;line-height:1.95}
+.wish-signature{font-size:19px;line-height:1.8}.love-ribbon span{letter-spacing:0;line-height:1.8}
+.memory-card .memory-caption{font-size:12px;line-height:1.8;min-height:70px;padding-top:13px;padding-bottom:15px;font-style:normal;letter-spacing:0}
+.wishes-photo figcaption,.little-photo figcaption{line-height:1.8}
+.letter-dialog h2{line-height:1.5}.letter-dialog #letterBody p{font-size:14px}.letter-sign{line-height:1.8}
+.fairy-replay{display:inline-flex;align-items:center;gap:6px;padding:3px 0;margin:12px 0 0;border:0;border-bottom:1px dotted #cca4ae;background:transparent;color:#9c647a;font-family:var(--sans);font-size:10px;line-height:1.7;transition:color .2s}
+.fairy-replay:hover{color:#aa4268}.fairy-replay svg{width:13px;height:13px}
+.fairy-dust-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:75;pointer-events:none}
+.fairy-intro{position:fixed;inset:0;z-index:72;pointer-events:none;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 45%,#fff6ed65,transparent 70%);animation:spell-air 5.2s ease both}
+.fairy-intro[hidden],.fairy-guide[hidden]{display:none}
+.fairy-traveler{position:absolute;top:0;left:0;width:clamp(103px,11vw,152px);height:auto;aspect-ratio:180/210;will-change:transform;filter:drop-shadow(0 4px 7px #c99a9960) drop-shadow(0 0 14px #fff2cd);transform-origin:50% 50%}
+.fairy-traveler img{width:100%;height:100%;object-fit:contain}
+.fairy-intro-copy{position:absolute;bottom:9%;left:50%;translate:-50% 0;padding:12px 26px;border:1px solid #e0cbb798;border-radius:50px;background:#fff9f0ed;box-shadow:0 5px 30px #b9859e16;color:#a76e83;font-family:var(--serif);font-size:17px;font-style:italic;letter-spacing:0;line-height:1.8;text-align:center;white-space:nowrap;animation:spell-caption 5.2s ease both}
+.fairy-intro-copy::before,.fairy-intro-copy::after{content:'✧';font-style:normal;color:var(--gold);font-size:19px;margin:0 12px}
+.fairy-guide{position:fixed;top:0;left:0;width:58px;z-index:32;pointer-events:none;will-change:transform;opacity:0;transition:opacity 500ms;filter:drop-shadow(0 2px 4px #c3909c33)}
+.fairy-guide.is-guiding{opacity:.82}.fairy-guide img{width:100%;animation:fairy-hover 3.3s ease-in-out infinite}
+body:has(dialog[open]) .fairy-guide,body:has(dialog[open]) .fairy-dust-canvas{visibility:hidden}
+.hero-scene{transform:translate3d(0,var(--scene-y,0px),0) scale(1.05);will-change:transform}
+.hero-art{translate:0 var(--portrait-y,0px)}
+.wishes-art .decorative-flower,.heading-bow,.wish-moon{translate:0 var(--ornament-y,0px)}
+.section-pad{position:relative;isolation:isolate}
+.chapter-mist{position:absolute;left:0;right:0;top:0;height:145px;overflow:hidden;pointer-events:none;z-index:-1;opacity:.55;translate:0 var(--cloud-shift,0px)}
+.chapter-mist i{position:absolute;left:-10%;top:-60px;width:65%;height:145px;border-radius:50%;background:radial-gradient(ellipse,#fffaf4b0 0%,#fff8f55c 44%,transparent 72%);transform:rotate(-5deg)}
+.chapter-mist i:nth-child(2){left:38%;top:-48px;width:75%;transform:rotate(8deg);opacity:.8}
+.chapter-mist i:nth-child(3){left:18%;top:3px;width:40%;height:65px;opacity:.5}
+.chapter-stars{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:-1}
+.chapter-stars span{position:absolute;left:var(--star-x);top:var(--star-y);color:var(--spell-gold);font-size:var(--star-size);opacity:.25;animation:chapter-twinkle 4s ease-in-out infinite;animation-delay:var(--star-delay)}
+.chapter-stars span:nth-child(2n){color:#cd99b5}
+.chapter-awake .chapter-line{animation:wand-underline 1.5s ease-out both}
+.fairy-ready .reveal,.fairy-ready .memory-card{transition:opacity .9s ease,translate 1s cubic-bezier(.16,.7,.25,1),filter .85s ease,transform .4s,box-shadow .4s;transition-delay:var(--reveal-delay,0ms),var(--reveal-delay,0ms),var(--reveal-delay,0ms),0s,0s}
+.fairy-ready .reveal:not(.visible),.fairy-ready .memory-card:not(.visible){opacity:0;translate:0 32px;filter:blur(3px)}
+.fairy-ready .reveal.visible,.fairy-ready .memory-card.visible{opacity:1;translate:0 0;filter:blur(0)}
+.fairy-ready .memory-card:not(.visible) img{scale:1.045}.memory-card img{transition:scale 1.3s ease}.fairy-ready .memory-card.visible img{scale:1}
+.chapter-awake h2 em{animation:title-enchantment 1.6s ease-out both}
+@keyframes spell-air{0%{opacity:0}10%,78%{opacity:1}100%{opacity:0}}
+@keyframes spell-caption{0%,10%{opacity:0;transform:translateY(8px)}22%,72%{opacity:1;transform:translateY(0)}95%,100%{opacity:0;transform:translateY(-4px)}}
+@keyframes fairy-hover{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-7px) rotate(2deg)}}
+@keyframes chapter-twinkle{0%,100%{opacity:.15;scale:.8}50%{opacity:.5;scale:1.1}}
+@keyframes wand-underline{0%{box-shadow:0 0 0 #edcf8a;scale:.3 1}35%{box-shadow:0 0 13px 2px #edcf8a80}100%{box-shadow:0 0 0 #edcf8a00;scale:1 1}}
+@keyframes title-enchantment{0%{text-shadow:0 0 18px #d9a5b6a0}100%{text-shadow:0 0 0 #d9a5b600}}
+@media(max-width:1100px){.hero h1{font-size:clamp(50px,5.6vw,65px)}.wishes-copy h2{font-size:42px}.wish-message p{font-size:13px}}
+@media(max-width:800px){.hero h1{font-size:clamp(42px,6.8vw,55px);letter-spacing:-.045em}.wishes-copy h2{font-size:32px}.wish-message p{font-size:12px}.wish-signature{font-size:17px}.section-heading h2{font-size:41px}.letter-copy h2{font-size:32px}.memory-card .memory-caption{font-size:11px}}
+@media(max-width:580px){.hero{padding-top:39px;min-height:1070px}.hero h1{font-size:clamp(40px,12.3vw,59px);line-height:1.27;letter-spacing:-.05em}.hero-copy .eyebrow{letter-spacing:1.2px}.hero-greeting{margin-top:20px}.hero-art{margin-top:4px}.hero-copy .fairy-replay{margin-top:10px;font-size:9px}.wishes-copy h2,.section-heading h2,.wish-scene h2,.letter-copy h2{font-size:clamp(29px,8.2vw,39px);line-height:1.42;letter-spacing:-.04em}.wish-message p{font-size:13px;line-height:1.95}.wish-signature{font-size:17px;gap:10px}.memory-card .memory-caption{font-size:11px;line-height:1.7;min-height:69px;padding-top:11px;padding-bottom:13px}.fairy-traveler{width:115px}.fairy-intro-copy{font-size:12px;padding:10px 10px;bottom:12%;max-width:calc(100% - 28px);white-space:normal;width:max-content}.fairy-intro-copy::before,.fairy-intro-copy::after{margin:0 5px;font-size:14px}.fairy-guide{width:44px}.chapter-mist{height:100px}.letter-dialog h2{font-size:27px;line-height:1.6}.letter-dialog #letterBody p{font-size:12px}.love-ribbon span{font-size:15px}.album-bottom{font-size:12px}.wish-status{font-size:15px!important;line-height:1.9!important}.letter-sign strong{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.fairy-intro,.fairy-guide,.fairy-dust-canvas{display:none!important}.hero-scene{transform:none;will-change:auto}.hero-art,.chapter-mist,.heading-bow,.wish-moon,.wishes-art .decorative-flower{translate:none!important}.fairy-ready .reveal,.fairy-ready .memory-card{opacity:1!important;translate:none!important;filter:none!important}.memory-card img{scale:1!important}}
